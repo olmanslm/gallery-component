@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  background-color: var(--gallery-background-color, whitesmoke);
+  width: 90%;
+  padding: 5rem 0;
+  margin: 0 auto;
+  font-family: var(--font-family, "sans-serif");
+  text-align: left;
+}
+
+.gallery {
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.gallery header {
+  padding: 2rem 0 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #2a6fdb;
+}
+
+.gallery-title {
+  color: var(--gallery-title-color, #333);
+  font-size: var(--gallery-title-font-size, 2rem);
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-description {
+  color: var(--gallery-description-color, #666);
+  margin: 1.5rem auto;
+  padding: 0 0 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1 1 0;
+  margin: 0.5rem;
+}
+
+footer {
+  padding: 2rem 0;
+}
+
+footer a {
+  display: block;
+  font-size: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--gallery-footer-color, #666);
+}
