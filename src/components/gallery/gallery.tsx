@@ -6,10 +6,15 @@ import { Component, Host, h, Prop } from "@stencil/core";
   shadow: true
 })
 export class Gallery {
-  @Prop() JSON_results: { title: string; path: string }[] = [];
-  @Prop({ mutable: true, reflectToAttr: true }) galleryTitle: string;
-  @Prop({ mutable: true, reflectToAttr: true }) galleryDescription: string;
-  @Prop({ mutable: true, reflectToAttr: true }) galleryItemPlaceHolder: string;
+  @Prop() JSON_results: { title: string; path: string }[] = []; //Future fetched values will be stored in this array.
+  @Prop({ mutable: true, reflectToAttr: true }) galleryTitle: string; //gallery title from the prop attribute
+  @Prop({ mutable: true, reflectToAttr: true }) galleryDescription: string; //gallery description from the prop attribute
+  @Prop({ mutable: true, reflectToAttr: true }) galleryItemPlaceHolder: string; //gallery item place holder from the prop attribute
+
+  /**
+   * This function is responsible to load the data from the json file (as requested) and parce the results
+   * to print them inside the gallery
+   */
   componentDidLoad() {
     fetch("../../assets/data/data.json")
       .then(res => res.json())
@@ -22,7 +27,10 @@ export class Gallery {
         console.log(err);
       });
   }
-
+  /**
+   * This function render the gallery and create new instances of the figure web component
+   * Each instance of the figure web componnent will be creaded with their needed attributes
+   */
   render() {
     let content = (
       <Host>

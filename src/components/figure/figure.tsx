@@ -6,10 +6,10 @@ import { Component, h, Prop, Element, Host } from "@stencil/core";
   shadow: true
 })
 export class Figure {
-  @Element() el: HTMLElement;
-  @Prop({ mutable: true, reflectToAttr: true }) figPath: string;
-  @Prop({ mutable: true, reflectToAttr: true }) figTitle: string;
-  @Prop({ mutable: true, reflectToAttr: true }) figPlaceHolder: string;
+  @Element() el: HTMLElement; // Html Element object
+  @Prop({ mutable: true, reflectToAttr: true }) figPath: string; //path from the prop attribute
+  @Prop({ mutable: true, reflectToAttr: true }) figTitle: string; //title from the prop attribute
+  @Prop({ mutable: true, reflectToAttr: true }) figPlaceHolder: string; //place holder text from the prop attribute
   figureTemplate = `
   <figure class="gallery-figure">
     <picture class="gallery-picture">
@@ -29,12 +29,16 @@ export class Figure {
       </span>
     </figcaption>
   </figure>
-  `;
+  `; //This is an html template just for demostration
   placeHolderTemplate = ` <div class="placeHolder">
     <img src="../../assets/Shape@3x.svg" alt="SVG camera image" />
     <p>${this.figPlaceHolder}</p>
   </div>
-  `;
+  `; //This is an html template just for demostration
+  /**
+   * This method is responsible to add and remove the placeholder and images
+   * This method is bounded to the onclick event
+   */
   attachFigure() {
     let container = this.el.shadowRoot.querySelector(".container");
     let outputHtml = this.el.shadowRoot.querySelector("div.placeHolder")
@@ -42,6 +46,9 @@ export class Figure {
       : this.placeHolderTemplate;
     container.innerHTML = outputHtml;
   }
+  /**
+   * Render the placeholder element and attach the onClick event to load the image.
+   */
   render() {
     return (
       <Host>
