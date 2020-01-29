@@ -2,7 +2,7 @@ import { Component, h, Prop, Element, Host } from "@stencil/core";
 
 @Component({
   tag: "slm-figure",
-  styleUrl: "./figure.css",
+  styleUrl: "./figure.scss",
   shadow: true
 })
 export class Figure {

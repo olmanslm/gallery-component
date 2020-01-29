@@ -1,7 +1,7 @@
 {
-  "name": "gallery-component",
+  "name": "slm-gallery-component",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Stencil Gallery webcomponent starter",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -22,7 +22,8 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
-    "@stencil/core": "^1.8.4"
+    "@stencil/core": "^1.8.4",
+    "@stencil/sass": "^1.1.1"
   },
   "license": "MIT"
 }
